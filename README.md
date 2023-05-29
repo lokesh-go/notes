@@ -1,1 +1,3 @@
-# notes
+# Notes
+
+CS core concepts.
