@@ -1,6 +1,6 @@
 # SQL vs NoSQL
 
-###SQL
+# SQL
 
 - Structured query language (SQL) is a standard language for database creation and manipulation.
 - SQL database is a structured approach to storing data and performing operations using structured query language for data creation, modification.
