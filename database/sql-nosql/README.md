@@ -54,6 +54,8 @@
 - Scalability - Horizontal (easily)
 - Not ACID, it follow BASE
 
-BA - Basically Available (Highly available)
-S - Safe state
-E - Eventual Consistency ( _Might get the stale data_ ) ( _when data will be refresh then get the updated data_ )
+##### BASE
+
+- BA - Basically Available (Highly available)
+- S - Safe state
+- E - Eventual Consistency ( _Might get the stale data_ ) ( _when data will be refresh then get the updated data_ )
