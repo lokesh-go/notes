@@ -1,12 +1,12 @@
 # SQL vs NoSQL
 
-# SQL
+### SQL
 
 - Structured query language (SQL) is a standard language for database creation and manipulation.
 - SQL database is a structured approach to storing data and performing operations using structured query language for data creation, modification.
 - MySQL, MSSQL, Oracle, PostgreSQL, SQLite are a relational database program that uses SQL queries.
 
-####Points
+#### Points
 
 - Tabular data structure format
 - Relational
@@ -21,7 +21,7 @@
 
 ---
 
-###NoSQL
+### NoSQL
 
 - NoSQL databases (aka "not only SQL") are non-tabular databases and store data differently than relational tables.
 - NoSQL is a type of database management system (DBMS) that is designed to handle and store large volumes of unstructured and semi-structured data.
@@ -29,7 +29,7 @@
 - It ensures availability and reliability of data.
 
 
-####Types of NoSQL databases
+#### Types of NoSQL databases
 
 - Key-value store
   - Amazon DynamoDB
@@ -45,7 +45,7 @@
   - Neo4j
   
 
-####Points
+#### Points
 
 - Unstructured data
 - Distributed nature
@@ -57,5 +57,3 @@
 BA - Basically Available (Highly available)
 S - Safe state
 E - Eventual Consistency ( _Might get the stale data_ ) ( _when data will be refresh then get the updated data_ )
-
----
