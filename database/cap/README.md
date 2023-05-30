@@ -3,7 +3,7 @@
 - It is desirable property of distributed system with replicated data.
 - CAP Theorem is a concept that a distributed database system can only have 2 of the 3: _Consistency, Availability and Partition Tolerance_
 
-<p align="center"><img src="https://github-production-user-asset-6210df.s3.amazonaws.com/31778886/241996687-b520dad2-82ca-4fe4-a1c0-f1fbc9e19ef2.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230530%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230530T141957Z&X-Amz-Expires=300&X-Amz-Signature=4d6119c535d49de16b946949cd5eb17f705a5b1d47d9e01a5e32393d6cf3c4b7&X-Amz-SignedHeaders=host&actor_id=31778886&key_id=0&repo_id=646865178" alt="CAP_Theorem" width="300px"/></p>
+<p align="center"><img src="https://github-production-user-asset-6210df.s3.amazonaws.com/31778886/241996687-b520dad2-82ca-4fe4-a1c0-f1fbc9e19ef2.png" alt="CAP_Theorem" width="300px"/></p>
 
 
 ---
