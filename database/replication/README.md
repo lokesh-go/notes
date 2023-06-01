@@ -51,7 +51,7 @@ Replica sets use elections to determine which set member will become primary. 
 - Two secondary members. Both secondaries can become the primary in an election.
 
 
-<p align="center"><img src="https://github.com/lokesh-go/notes/assets/31778886/17226d5f-4583-42cd-a324-335f17289298" alt="PSS" width="300px"/></p>
+<p align="center"><img src="https://github.com/lokesh-go/notes/assets/31778886/17226d5f-4583-42cd-a324-335f17289298" alt="PSS" width="350px"/></p>
 
 
 - These deployments provide two complete copies of the data set at all times in addition to the primary.
@@ -69,7 +69,7 @@ Replica sets use elections to determine which set member will become primary. 
 - For example, in the following replica set with 2 data-bearing members (the primary and a secondary), an arbiter allows the set to have an odd number of votes to break a tie:
 
 
-<p align="center"><img src="https://github.com/lokesh-go/notes/assets/31778886/b6fc4fe1-416e-43bc-88f4-5463a29a177d" alt="PSA" width="300px"/></p>
+<p align="center"><img src="https://github.com/lokesh-go/notes/assets/31778886/b6fc4fe1-416e-43bc-88f4-5463a29a177d" alt="PSA" width="350px"/></p>
 
 
 - Since the arbiter does not hold a copy of the data, these deployments provides only one complete copy of the data.
