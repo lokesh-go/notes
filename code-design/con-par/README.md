@@ -11,5 +11,5 @@
 - Parallelism is when tasks literally run at the same time, e.g. on a multicore processor.
 
 
-<p align="center"><img src="https://github.com/lokesh-go/notes/assets/31778886/aaa0cf1f-79a1-4993-adee-d568b46904f1" alt="Con-vs-Par" width="400px"/></p>
+<p align="center"><img src="https://github.com/lokesh-go/notes/assets/31778886/aaa0cf1f-79a1-4993-adee-d568b46904f1" alt="Con-vs-Par" width="600px"/></p>
 
