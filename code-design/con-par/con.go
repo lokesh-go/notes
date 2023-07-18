@@ -18,7 +18,7 @@ func main() {
 	go task2(&wg)
 	wg.Wait() // This method blocks the execution of code until the internal counter becomes 0.
 
-	taks3()
+	taks3() // This task will executed by the main goroutine
 
 	multiTaksEx()
 	lock.ConWithLock()

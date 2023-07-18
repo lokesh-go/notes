@@ -3,12 +3,26 @@
 - Concurrency is about multiple tasks which start, run, and complete in overlapping time periods, in no specific order.
 - Concurrency is when two or more tasks can start, run, and complete in overlapping time periods. It doesn't necessarily mean they'll ever both be running at the same instant. For example, multitasking on a single-core machine.
 - Concurrency is about dealing with lots of things at once.
+- Concurrency gives you an illusion of simultaneous execution because of context switching. Because the processors are so fast in switching context we don’t notice lags in day to day task. This is also called as Mutitasking.
+- When two or more tasks run during the overlapping time and make some progress is Concurrency.
+- Two tasks running concurrently can optionally use choose to execute on two separate cores of the CPU or execute on a single core and context switch to make progress.
 
 
 #### Parallelism
 
 - Parallelism is about multiple tasks or subtasks of the same task that literally run at the same time on a hardware with multiple computing resources like multi-core processor.
 - Parallelism is when tasks literally run at the same time, e.g. on a multicore processor.
+- With parallelism multiple processes can execute simultaneously, no illusions. Parallelism therefore needs more than one processing unit. These units can still multitask. This is also called as muti processing.
+- When two or more tasks run during the overlapping time and make some progress simultaneously is Parallelism.
+- But when two tasks are running in parallel, they have to be making progress simultaneously at a given instant. This means we can say all parallel executions are concurrent, but all concurrent executions need not parallel.
+
+
+##### Diff
+
+- The only difference between the two statements is the word **"simultaneous,"** making all the difference.
+
+
+
 
 
 <p align="center"><img src="https://github.com/lokesh-go/notes/assets/31778886/aaa0cf1f-79a1-4993-adee-d568b46904f1" alt="Con-vs-Par" width="600px"/></p>
