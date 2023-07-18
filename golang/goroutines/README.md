@@ -5,6 +5,16 @@
 - Goroutines are incredibly cheap when compared to traditional threads as the overhead of creating a goroutine is very low. Therefore, they are widely used in Go for concurrent programming.
 - A goroutine is a function that executes simultaneously with other goroutines in a program and are lightweight threads managed by Go.
 
+#### Some Points
+- Goroutines enable concurrent execution of functions or methods in Go.
+- Goroutines are lightweight, independently scheduled functions in Go.
+- Goroutines are created using the go keyword before a function call.
+- Goroutines are asynchronous and run concurrently without blocking other Goroutines.
+- Goroutines are managed by the Go runtime.
+- Goroutines communicate and synchronize through channels for coordination.
+- The go runtime manages lightweight threads called goroutines.
+
+
 #### Some Details
 - A goroutine has a simple model: it is a function executing concurrently with other goroutines in the same address space.
 - It is lightweight, costing little more than the allocation of stack space. And the stacks start small, so they are cheap, and grow by allocating (and freeing) heap storage as required.
@@ -23,8 +33,9 @@
 - Goroutine created with initial only 2KB of stack size.
 
 ### When to use Goroutines?
-Goroutines are useful when you want to do multiple things simultaneously. For example, if you have ten things you want to do at the same time, you can do each one on a separate goroutine, and wait for all of them to finish.
+Goroutines are useful when you want to do multiple things **simultaneously**. For example, if you have ten things you want to do at the same time, you can do each one on a separate goroutine, and wait for all of them to finish.
 
 ### Why goroutines are lightweight?
-It's because a goroutine starts with a stack space of 2KB which is extremely smaller and more compact than OS thread's fixed-size stack space of 2MB.
+- It's because a goroutine starts with a stack space of 2KB which is extremely smaller and more compact than OS thread's fixed-size stack space of 2MB. However,  Go runtime dynamically manages the stack size of Goroutines based on the program's needs.
+- Goroutines are managed by the Go runtime and not by the underlying operating system. It allows Go runtime to have more control over scheduling Goroutines and enables efficient concurrency management without relying solely on operating system threads.
 
