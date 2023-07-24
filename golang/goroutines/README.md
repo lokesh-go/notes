@@ -39,3 +39,23 @@ Goroutines are useful when you want to do multiple things **simultaneously**. Fo
 - It's because a goroutine starts with a stack space of 2KB which is extremely smaller and more compact than OS thread's fixed-size stack space of 2MB. However,  Go runtime dynamically manages the stack size of Goroutines based on the program's needs.
 - Goroutines are managed by the Go runtime and not by the underlying operating system. It allows Go runtime to have more control over scheduling Goroutines and enables efficient concurrency management without relying solely on operating system threads.
 
+### What happens when context switching will be in Goroutines
+
+When a Goroutine is preempted, its execution is temporarily suspended by the Go scheduler to allow other Goroutines to run. To ensure that the Goroutine can resume its execution correctly after being preempted, the Go runtime **stores** its state, including the completion task process, in the **Goroutine's context**.
+
+The key components of a Goroutine's Context are:
+- **Stack**
+  - Each Goroutine has its own stack, which is a fixed-size memory region used for storing local variables and function call frames.
+  - When a Goroutine is preempted, the current state of its stack, including the function call frames, local variables, and the point of execution, is saved.
+- **Program Counter (PC)**
+  - The program counter is a register that keeps track of the current instruction being executed by the Goroutine.
+  - When a Goroutine is preempted, the value of the program counter is saved so that the Goroutine can resume execution from the correct point later.
+- **Registers**
+  - Goroutines also have various registers that hold intermediate results and other important information during their execution.
+  - When preempted, the values of these registers are saved so that the Goroutine can pick up where it left off.
+- **Goroutine State**
+  - The Go runtime also stores information about the Goroutine's state, such as whether it is blocked on a channel operation, waiting for a lock (mutex), or runnable.
+
+When a preempted Goroutine is rescheduled to run again, the Go scheduler restores the Goroutine's context from where it was saved, allowing it to continue its execution as if it was never interrupted. This process of saving and restoring a Goroutine's context is known as **"context switching."**
+
+Context switching in Goroutines is very efficient compared to traditional operating system threads because Goroutines have small fixed-size stacks and the Go scheduler is designed to minimize the overhead of context switches. The Go runtime can efficiently manage thousands or even millions of Goroutines concurrently, making Go an excellent choice for writing highly concurrent applications.
