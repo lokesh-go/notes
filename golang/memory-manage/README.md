@@ -19,7 +19,7 @@ Go's automatic memory management and efficient stack allocation for local variab
 
 ### Garbage Collector
 
-The garbage collector (GC) is responsible for managing memory allocated on the heap.
+The garbage collector (GC) is responsible for managing memory allocated on the **heap**.
 Its primary role is to identify and reclaim memory that is no longer in use, which helps prevent memory leaks and ensures efficient memory utilization.
 The garbage collector in Go employs a concurrent, tri-color, mark-and-sweep algorithm. 
 Let's see how it works for both the stack and heap:
@@ -28,7 +28,7 @@ Let's see how it works for both the stack and heap:
   - As soon as the function returns, the stack frame is automatically deallocated, and the memory is reclaimed. This process is known as **"automatic stack deallocation"** and is handled by the **Go runtime**.
   - Since the stack operates in a last-in-first-out (LIFO) manner, memory deallocation for local variables is very fast and does not require the garbage collector's intervention.
 - **Heap Memory Management**
-  - Memory allocated on the heap requires explicit management by the garbage collector because objects on the heap may have longer lifetimes and may be referenced by multiple parts of the program.
+  - Memory allocated on the heap requires **explicit management by the garbage collector** because objects on the heap may have longer lifetimes and may be referenced by multiple parts of the program.
   - The garbage collector uses a concurrent mark-and-sweep algorithm to determine which objects on the heap are still in use and which can be reclaimed.
   - The garbage collector works in several phases:
     - **Mark Phase**
@@ -38,3 +38,19 @@ Let's see how it works for both the stack and heap:
   - The garbage collector in Go runs concurrently with the application, meaning it runs in the background while Goroutines continue executing. This minimizes the impact of garbage collection on the overall performance of the program.
 
 Go's garbage collector is designed to strike a balance between efficiency and responsiveness. The concurrent and incremental nature of the garbage collector helps reduce pause times and ensures that the application's performance remains smooth even during garbage collection cycles. However, developers should still be mindful of creating unnecessary objects on the heap to avoid undue pressure on the garbage collector and ensure optimal memory management in their Go programs.
+
+#### Variables are generally allocated on either the stack or the heap, depending on their scope, lifetime, and other factors:
+
+###### Stack Allocation:
+  - Local variables declared within a function or a block have their memory allocated on the stack.
+  - The stack is a region of memory that stores function call frames and local variables for each Goroutine.
+  - The memory for local variables is automatically deallocated when the function or block exits, making stack allocation efficient and suitable for short-lived variables.
+  - The size of the stack is fixed, and stack frames are pushed and popped in a last-in-first-out (LIFO) manner.
+###### Heap Allocation:
+  - Variables that require a longer lifetime or have dynamic sizes are typically allocated on the heap.
+  - The heap is a region of memory that stores dynamically allocated data, and its size can grow or shrink as needed during program execution.
+  - Objects created with **new()**, **make()**, or composite literals (e.g., _**slices, maps, channels**_) are allocated on the heap.
+  - Variables allocated on the heap must be explicitly managed by the programmer, as Go uses a garbage collector to automatically reclaim memory from objects that are no longer in use.
+  - The heap is suitable for variables that need to persist beyond the scope of the function or be shared across multiple Goroutines.
+
+In summary, local variables within functions or blocks are allocated on the stack and have automatic memory management. On the other hand, variables that require longer lifetimes or dynamic sizes are allocated on the heap and must be explicitly managed using the garbage collector.
